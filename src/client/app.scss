@@ -1,0 +1,174 @@
+@import "reset.css";
+@import url('https://fonts.googleapis.com/css?family=Raleway|Roboto');
+
+body {
+  background: whitesmoke;
+}
+
+html {
+  font-family: 'aleway', sans-serif;
+  font-size: 10px;
+}
+
+header {
+  display: flex;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-content: center;
+  margin: 0;
+
+  background: #FC466B; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #3F5EFB, #FC466B); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #3F5EFB, #FC466B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: white;
+  border-bottom: solid gray .2em;
+  font-size: inherit;
+  overflow: hidden;
+}
+
+#header-title {
+  font-size: 3.5rem;
+  font-family: 'Roboto', sans-serif;
+  padding: .5rem;
+  text-align: center;
+}
+
+.header-text {
+  width: max-content;
+  font-size: 2rem;
+  padding: 1.5rem 0 1.5rem 2rem;
+}
+
+.header-text > * {
+  width: fit-content;
+}
+
+.intro-form {
+  margin: 5% auto 0 auto;
+  width: fit-content;
+  padding: 2%;
+  border: solid .2rem #B23FA6;
+  background: white;
+}
+
+.intro-form > div {
+  display: flex;
+  flex-flow: column nowrap;
+  text-align: center;
+}
+
+.intro-form > div > * {
+  text-align: inherit;
+  margin: 4%;
+}
+
+.intro-form > div > label {
+  font-size: 2rem;
+}
+
+#survey {
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto;
+  margin-top: 5%;
+  padding-bottom: 2rem;
+}
+
+#survey > ul {
+  display: flex;
+  flex-flow: column nowrap;
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+#survey > ul > li {
+  padding: .2rem;
+  margin-bottom: .7rem;
+  border: solid .1rem gray;
+  display: flex;
+  flex-flow: column nowrap;
+  border-radius: 10px;
+  box-shadow: -2px 3px 7px 0px black;
+}
+
+#survey > ul > li > div {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+}
+
+#survey p {
+  font-size: 1.2rem;
+  margin-left: 1rem;
+  margin-bottom: .5rem;
+}
+#survey label {
+  font-size: 1.4rem;
+}
+
+#survey p ::first-letter {
+  font-size: 1.9rem;
+}
+
+#survey > ul > li > div > div > * {
+  padding: .2rem;
+}
+
+#survey > ul > li > * {
+  padding: .2rem;
+}
+
+#survey input[type=radio] {
+  height: .9rem;
+  width: .9rem;
+}
+
+#survey input[type=submit] {
+
+}
+
+/* SMARTPHONES PORTRAIT */
+@media only screen and (min-width: 300px) {
+  #survey {
+    grid-template-columns: 5% auto 5%;
+  }
+}
+
+/* SMARTPHONES LANDSCAPE */
+@media only screen and (min-width: 480px) {
+  html {
+    font-size: 15px;
+  }
+
+}
+
+/* TABLETS PORTRAIT */
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 20px;
+  }
+  #survey {
+    grid-template-columns: 20% auto 20%;
+  }
+
+  .header-text {
+    padding-left: 2.5rem;
+  }
+
+}
+
+/* TABLET LANDSCAPE / DESKTOP */
+@media only screen and (min-width: 1024px) {
+
+  html {
+    font-size: 25px;
+  }
+
+}
+
+
+
