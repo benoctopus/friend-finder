@@ -25,7 +25,7 @@ header {
   background: -webkit-linear-gradient(to right, #3F5EFB, #FC466B); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #3F5EFB, #FC466B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: white;
-  border-bottom: solid gray .2em;
+  border-bottom: solid gray .1rem;
   font-size: inherit;
   overflow: hidden;
 }
@@ -129,6 +129,42 @@ header {
 
 #survey input[type=submit] {
 
+}
+
+.friend-card {
+  margin: 2.5rem auto 0 auto;
+  display: flex;
+  flex-flow: row nowrap;
+  border: solid 1px gray;
+  width: fit-content;
+  padding: .8rem;
+}
+
+.friend-card > * {
+  //padding: .5rem
+}
+
+.friend-card > img {
+  $idim: 15rem;
+  border-radius: 100%;
+  max-width: $idim;
+  max-height: $idim;
+  margin-right: 3rem;
+  padding: 0 !important;
+
+}
+.friend-card h2, h3 {
+ font-size: 2rem;
+}
+
+.friend-card > div {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  text-align: center;
+}
+.friend-card > div > * {
+  padding: 0 .5rem 0 .5rem;
 }
 
 /* SMARTPHONES PORTRAIT */

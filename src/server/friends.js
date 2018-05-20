@@ -3,14 +3,16 @@ module.exports = {
   Friend: class Friend {
     constructor(name, photoUrl, scores) {
       this.name = name;
-      this.photo = photoUrl;
+      this.photo = photoUrl ?
+        photoUrl :
+        'https://www.professionalclick.com/images/default.jpg';
       this.scores = scores
     }
   },
 
   autoScores() {
     let scores = [];
-    for (let i = 0; i < 11; i++) {
+    for (let i = 0; i < 10; i++) {
       scores.push(
         Math.floor((Math.random() * 4.99) + 1)
       )
@@ -30,6 +32,15 @@ module.exports = {
     {name: 'DAVID', photoUrl: ''},
     {name: 'will', photoUrl: ''},
     {name: 'kendrick', photoUrl: ''},
+    {name: 'diddy', photoUrl: ''},
+    {name: 'lauren', photoUrl: ''},
+    {name: 'kelsey', photoUrl: ''},
+    {name: 'james', photoUrl: ''},
+    {name: 'frank', photoUrl: ''},
+    {name: 'jesus', photoUrl: ''},
+    {name: 'horus', photoUrl: ''},
+    {name: 'bill', photoUrl: ''},
+    {name: 'emma', photoUrl: ''},
   ],
 
   dummyGen() {

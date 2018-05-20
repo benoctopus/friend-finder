@@ -13,6 +13,7 @@ class SurveyContainer extends Component {
   renderQuestions(questions) {
     return questions.map((question, index) => (
       <SurveyElement
+        key={index + 1}
         question={question}
         name={index + 1}
         checkTracker={this.checkTracker}/>
@@ -35,8 +36,8 @@ class SurveyContainer extends Component {
     else {
       this.postFriend({
         name: this.props.username,
-        photoUrl: this.props.photo ? this.props.photo : null,
-        score: this.checks
+        photo: this.props.photo ? this.props.photo : null,
+        scores: this.checks
       })
     }
   }
@@ -49,14 +50,14 @@ class SurveyContainer extends Component {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(friend)
-    }).then(res => {
-      console.log(res)
+    }).then(res => res.json())
+      .then(res => {
+        this.props.grabResults(res)
     })
   }
 
   checkTracker(key, value) {
     this.checks[key - 1] = value;
-    console.log(this.checks)
   }
 
 

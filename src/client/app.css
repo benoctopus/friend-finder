@@ -23,7 +23,7 @@ header {
   background: linear-gradient(to right, #3F5EFB, #FC466B);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: white;
-  border-bottom: solid gray .2em;
+  border-bottom: solid gray .1rem;
   font-size: inherit;
   overflow: hidden; }
 
@@ -107,6 +107,33 @@ header {
 #survey input[type=radio] {
   height: .9rem;
   width: .9rem; }
+
+.friend-card {
+  margin: 2.5rem auto 0 auto;
+  display: flex;
+  flex-flow: row nowrap;
+  border: solid 1px gray;
+  width: fit-content;
+  padding: .8rem; }
+
+.friend-card > img {
+  border-radius: 100%;
+  max-width: 15rem;
+  max-height: 15rem;
+  margin-right: 3rem;
+  padding: 0 !important; }
+
+.friend-card h2, h3 {
+  font-size: 2rem; }
+
+.friend-card > div {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  text-align: center; }
+
+.friend-card > div > * {
+  padding: 0 .5rem 0 .5rem; }
 
 /* SMARTPHONES PORTRAIT */
 @media only screen and (min-width: 300px) {
