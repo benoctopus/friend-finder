@@ -33,20 +33,39 @@ class ContentContainer extends Component {
 
   renderView() {
     if (this.state.results) {
-      return <NewFriendContainer {...this.state.results}/>
+      return <NewFriendContainer
+        results = {this.state.results}
+        onMount={this.onMount}
+        unMount={this.unMount}
+      />
     }
     else if (!this.state.username) {
       return <SignInFormContainer
+        onMount={this.onMount}
+        unMount={this.unMount}
         updateValue={this.updateValue}
         setUserName={this.setUserName}
       />;
     }
     else {
       return <SurveyContainer
+        onMount={this.onMount}
+        unMount={this.unMount}
         grabResults={this.grabResults}
         username={this.state.username}
       />;
     }
+  }
+
+  onMount() {
+    this.setState({visibility: null})
+  }
+
+  unMount() {
+    this.setState({visibility: 'invisible'});
+    return new Promise(resolve => {
+      setTimeout(() => resolve(), 250)
+    })
   }
 
   render() {

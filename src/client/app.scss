@@ -30,6 +30,18 @@ header {
   overflow: hidden;
 }
 
+.invisible {
+  opacity: 0;
+}
+
+#root > div > * {
+  -webkit-transition: opacity 250ms;
+  -moz-transition: opacity 250ms;
+  -ms-transition: opacity 250ms;
+  -o-transition: opacity 250ms;
+  transition: opacity 250ms;
+}
+
 #header-title {
   font-size: 3.5rem;
   font-family: 'Roboto', sans-serif;

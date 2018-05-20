@@ -22,6 +22,7 @@ app.post('/api/newfriend', (req, res) => {
   if (!user.photo) {
     user.photo = defaultPic
   }
+  userData.push(user);
   res.json(determineCompatibility(user))
 });
 

@@ -5,9 +5,13 @@ import SurveyElement from '../presentational/SurveyElement'
 class SurveyContainer extends Component {
   constructor(props) {
     super(props);
-    this.state = {questions: 'loading'};
+    this.state = {
+      questions: 'loading',
+      visibility: 'invisible'
+    };
     this.checks = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-    this.checkTracker = this.checkTracker.bind(this)
+    this.checkTracker = this.checkTracker.bind(this);
+    this.onMount = this.props.onMount.bind(this)
   }
 
   renderQuestions(questions) {
@@ -24,7 +28,8 @@ class SurveyContainer extends Component {
     fetch('/api/questions')
       .then(res => res.json())
       .then(questions => {
-        this.setState({questions: this.renderQuestions(questions)})
+        this.setState({questions: this.renderQuestions(questions)});
+        this.onMount()
       });
   }
 
@@ -53,7 +58,7 @@ class SurveyContainer extends Component {
     }).then(res => res.json())
       .then(res => {
         this.props.grabResults(res)
-    })
+      })
   }
 
   checkTracker(key, value) {
@@ -64,6 +69,7 @@ class SurveyContainer extends Component {
   render() {
     return (
       <form
+        className={this.state.visibility}
         onSubmit={event => this.surveySubmit(event)}
         id='survey'>
         <ul>
