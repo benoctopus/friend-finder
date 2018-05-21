@@ -3,7 +3,7 @@ import ReactDom from 'react-dom';
 
 const FriendCard = props => (
 
-  <div className={'friend-card'}>
+  <div className={props.compatibility ? 'friend-card friend-modal' : 'friend-card'}>
     <img src={props.friend.photo} alt='image not available'/>
     <div>
       <h2>{props.friend.name}</h2>
@@ -14,14 +14,19 @@ const FriendCard = props => (
             {props.friend.scores.map((score, index) => {
               return (
                 <li key={index + 1}>
-                  <p>Question: {index + 1} score: {score}</p>
+                  <p>Question: {index + 1} </p>
+                  <p>score: {score}</p>
                 </li>
               )
             })}
           </ul>
       }
       <div>
-        <a href='/api/friends'>View All Friends</a>
+        {
+          props.compatibility ?
+            <a onClick={() => props.allFriends()}>View All Friends</a>
+            : null
+        }
       </div>
     </div>
 

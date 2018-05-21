@@ -9,7 +9,7 @@ const SignInForm = props => (
       {...{
         required: true,
         hname: 'username',
-        onChange: (event) => props.updateValue(event),
+        onChange: (event) => props.updateInput(event),
         type: 'text'
       }}
       className='sign-in-elem sign-in-inp'/>

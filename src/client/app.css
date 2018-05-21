@@ -27,6 +27,19 @@ header {
   font-size: inherit;
   overflow: hidden; }
 
+a {
+  color: gray;
+  -webkit-transition: color 300ms;
+  -moz-transition: color 300ms;
+  -ms-transition: color 300ms;
+  -o-transition: color 300ms;
+  transition: color 300ms;
+  cursor: pointer; }
+
+a:hover {
+  color: blue;
+  text-underline: blue; }
+
 .invisible {
   -webkit-animation: fadein 300ms;
   -moz-animation: fadein 300ms;
@@ -56,7 +69,7 @@ input[type=submit]:hover {
 input[type=submit]:focus {
   outline: none; }
 
-#root > * {
+#root > div > * {
   -webkit-animation: fadein 400ms;
   -moz-animation: fadein 400ms;
   -ms-animation: fadein 400ms;
@@ -144,11 +157,13 @@ input[type=submit]:focus {
   height: .9rem;
   width: .9rem; }
 
-.friend-card {
+.friend-modal {
   position: fixed;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+.friend-card {
   display: flex;
   flex-flow: row nowrap;
   border: solid 1px gray;
@@ -160,6 +175,16 @@ input[type=submit]:focus {
   -o-animation: fadein 300ms;
   animation: fadein 300ms; }
 
+#all-friends {
+  width: fit-content;
+  margin: auto; }
+
+#all-friends > ul {
+  width: fit-content; }
+
+#all-friends > ul > li {
+  margin-top: 2rem; }
+
 @keyframes fadein {
   from {
     opacity: 0; }
@@ -169,6 +194,8 @@ input[type=submit]:focus {
   border-radius: 100%;
   max-width: 15rem;
   max-height: 15rem;
+  min-width: 15rem;
+  min-height: 15rem;
   margin-right: 3rem;
   padding: 0 !important; }
 
@@ -183,6 +210,15 @@ input[type=submit]:focus {
 
 .friend-card > div > * {
   padding: 0 .5rem 0 .5rem; }
+
+.friend-card li {
+  width: max-content;
+  display: flex;
+  position: relative;
+  flex-flow: row nowrap; }
+
+.friend-card li:last-child {
+  justify-items: flex-end; }
 
 /* SMARTPHONES PORTRAIT */
 @media only screen and (min-width: 300px) {

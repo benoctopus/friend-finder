@@ -6,14 +6,6 @@ class NewFriendContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {visibility: 'invisible'};
-    // this.onMount = this.props.onMount.bind(this);
-    // this.unMount = this.props.unMount.bind(this);
-  }
-
-  componentDidMount() {
-  }
-
-  componentWillUnmount() {
   }
 
   render() {
@@ -21,7 +13,7 @@ class NewFriendContainer extends Component {
       // vis = {this.state.visibility}
       {...this.props.results}/>
   }
-
 }
 
 export default NewFriendContainer;
+

@@ -75,7 +75,6 @@ class SurveyContainer extends Component {
   render() {
     return (
       <form
-        className={this.props.visibility}
         onSubmit={event => this.surveySubmit(event)}
         id='survey'>
         {this.state.newFriend}

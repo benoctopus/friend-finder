@@ -3,54 +3,54 @@ import ReactDom from 'react-dom';
 import SignInFormContainer from './SignInFormContainer'
 import SurveyContainer from './SurveyContainer'
 import NewFriendContainer from './NewFriendContainer'
+import AllFriendsContainer from './AllFriendsContainer'
 
 class ContentContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
       username: null,
-      results: null
+      results: null,
+      showFriends: false
     };
     this.setUserName = this.setUserName.bind(this);
-    this.updateValue = this.updateValue.bind(this);
+    this.updateInput = this.updateInput.bind(this);
     this.grabResults = this.grabResults.bind(this);
+    this.allFriends = this.allFriends.bind(this)
   }
 
   setUserName(event) {
     event.preventDefault();
     this.setState({username: this.state.value});
   }
+  
+  allFriends() {
+    this.setState({showFriends: true})
+  }
 
   grabResults(results) {
-    console.log(results);
+    results.allFriends = this.allFriends;
     this.setState({results})
   }
 
-  updateValue(event) {
+  updateInput(event) {
     this.state.value = event.target.value;
     this.setState({value: this.state.value});
   }
 
   renderView() {
-    // if (this.state.results) {
-    //   return <NewFriendContainer
-    //     results = {this.state.results}
-    //     onMount={this.onMount}
-    //     unMount={this.unMount}
-    //   />
-    // }
-    if (!this.state.username) {
+    if (this.state.showFriends) {
+      return <AllFriendsContainer/>
+    }
+    else if (!this.state.username) {
       return <SignInFormContainer
-        onMount={this.onMount}
-        unMount={this.unMount}
-        updateValue={this.updateValue}
+        updateInput={this.updateInput}
         setUserName={this.setUserName}
       />;
     }
     else {
       return <SurveyContainer
-        // onMount={this.onMount}
-        // unMount={this.unMount}
+        allFriends={this.allFriends}
         grabResults={this.grabResults}
         username={this.state.username}
         newFriend={this.state.results ?
