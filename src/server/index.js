@@ -26,6 +26,8 @@ app.post('/api/newfriend', (req, res) => {
   userData.push(user);
 });
 
+// app.get('*', (req, res) => res.send('/dist/*'));
+
 
 app.listen(process.env.PORT || 8000, () => console.log('Listening on port 8080!'));
 
