@@ -119,12 +119,16 @@ header {
   width: .9rem; }
 
 .friend-card {
-  margin: 2.5rem auto 0 auto;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-flow: row nowrap;
   border: solid 1px gray;
   width: fit-content;
-  padding: .8rem; }
+  padding: .8rem;
+  background: white; }
 
 .friend-card > img {
   border-radius: 100%;

@@ -22,8 +22,8 @@ app.post('/api/newfriend', (req, res) => {
   if (!user.photo) {
     user.photo = defaultPic
   }
+  res.json(determineCompatibility(user));
   userData.push(user);
-  res.json(determineCompatibility(user))
 });
 
 
@@ -45,6 +45,6 @@ function determineCompatibility(bachelor) {
   });
   return {
     friend: bestFriend,
-    compatibility: Math.floor((1 - potential / 40) * 100),
+    compatibility: Math.round((1 - (potential - 1) / 40) * 100)
   };
 }

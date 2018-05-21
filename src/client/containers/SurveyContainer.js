@@ -7,7 +7,8 @@ class SurveyContainer extends Component {
     super(props);
     this.state = {
       questions: 'loading',
-      visibility: 'invisible'
+      visibility: 'invisible',
+      newFriend: null
     };
     this.checks = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
     this.checkTracker = this.checkTracker.bind(this);
@@ -33,6 +34,12 @@ class SurveyContainer extends Component {
       });
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.newFriend) {
+      this.setState({newFriend: nextProps.newFriend})
+    }
+  }
+
   surveySubmit(event) {
     event.preventDefault();
     if (this.checks.includes(0)) {
@@ -46,6 +53,7 @@ class SurveyContainer extends Component {
       })
     }
   }
+
 
   postFriend(friend) {
     fetch('/api/newfriend', {
@@ -69,9 +77,10 @@ class SurveyContainer extends Component {
   render() {
     return (
       <form
-        className={this.state.visibility}
+        className={this.props.visibility}
         onSubmit={event => this.surveySubmit(event)}
         id='survey'>
+        {this.state.newFriend}
         <ul>
           {this.state.questions}
           <input type='submit'/>

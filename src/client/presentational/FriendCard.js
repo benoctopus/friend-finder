@@ -2,7 +2,8 @@ import React, {Component} from 'react'
 import ReactDom from 'react-dom';
 
 const FriendCard = props => (
-  <div className={'friend-card ' + props.vis}>
+
+  <div className={'friend-card'}>
     <img src={props.friend.photo} alt='image not available'/>
     <div>
       <h2>{props.friend.name}</h2>

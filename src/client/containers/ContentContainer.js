@@ -32,14 +32,14 @@ class ContentContainer extends Component {
   }
 
   renderView() {
-    if (this.state.results) {
-      return <NewFriendContainer
-        results = {this.state.results}
-        onMount={this.onMount}
-        unMount={this.unMount}
-      />
-    }
-    else if (!this.state.username) {
+    // if (this.state.results) {
+    //   return <NewFriendContainer
+    //     results = {this.state.results}
+    //     onMount={this.onMount}
+    //     unMount={this.unMount}
+    //   />
+    // }
+    if (!this.state.username) {
       return <SignInFormContainer
         onMount={this.onMount}
         unMount={this.unMount}
@@ -53,6 +53,10 @@ class ContentContainer extends Component {
         unMount={this.unMount}
         grabResults={this.grabResults}
         username={this.state.username}
+        newFriend={this.state.results ?
+          <NewFriendContainer results={this.state.results}/>
+          : null
+        }
       />;
     }
   }
