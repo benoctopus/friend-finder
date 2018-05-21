@@ -20,7 +20,11 @@ const FriendCard = props => (
             })}
           </ul>
       }
+      <div>
+        <a href='/api/friends'>View All Friends</a>
+      </div>
     </div>
+
   </div>
 );
 

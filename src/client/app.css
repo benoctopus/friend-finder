@@ -28,14 +28,40 @@ header {
   overflow: hidden; }
 
 .invisible {
-  opacity: 0; }
+  -webkit-animation: fadein 300ms;
+  -moz-animation: fadein 300ms;
+  -o-animation: fadein 300ms;
+  animation: fadein 300ms; }
 
-#root > div > * {
-  -webkit-transition: opacity 250ms;
-  -moz-transition: opacity 250ms;
-  -ms-transition: opacity 250ms;
-  -o-transition: opacity 250ms;
-  transition: opacity 250ms; }
+input[type=submit] {
+  border-radius: 20px;
+  padding: .3rem 2rem;
+  font-size: .7rem;
+  background: white;
+  border: solid 1px gray;
+  width: fit-content;
+  margin: .2rem auto !important;
+  -webkit-transition: background-color 300ms, padding-left 300ms, padding-right 300ms;
+  -moz-transition: background-color 300ms, padding-left 300ms, padding-right  300ms;
+  -ms-transition: background-color 300ms, padding-left 300ms, padding-right  300ms;
+  -o-transition: background-color 300ms, padding-left 300ms, padding-right  300ms;
+  transition: background-color 300ms, padding-left 300ms, padding-right  300ms; }
+
+input[type=submit]:hover {
+  background-color: #B23FA6;
+  padding-left: 2.3rem;
+  padding-right: 2.3rem;
+  margin: auto; }
+
+input[type=submit]:focus {
+  outline: none; }
+
+#root > * {
+  -webkit-animation: fadein 400ms;
+  -moz-animation: fadein 400ms;
+  -ms-animation: fadein 400ms;
+  -o-animation: fadein 400ms;
+  animation: fadein 400ms; }
 
 #header-title {
   font-size: 3.5rem;
@@ -90,7 +116,7 @@ header {
   display: flex;
   flex-flow: column nowrap;
   border-radius: 10px;
-  box-shadow: -2px 3px 7px 0px black; }
+  box-shadow: -2px 3px 7px 0px gray; }
 
 #survey > ul > li > div {
   display: flex;
@@ -128,8 +154,17 @@ header {
   border: solid 1px gray;
   width: fit-content;
   padding: .8rem;
-  background: white; }
+  background: white;
+  -webkit-animation: fadein 300ms;
+  -moz-animation: fadein 300ms;
+  -o-animation: fadein 300ms;
+  animation: fadein 300ms; }
 
+@keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 .friend-card > img {
   border-radius: 100%;
   max-width: 15rem;

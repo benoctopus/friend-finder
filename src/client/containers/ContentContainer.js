@@ -49,8 +49,8 @@ class ContentContainer extends Component {
     }
     else {
       return <SurveyContainer
-        onMount={this.onMount}
-        unMount={this.unMount}
+        // onMount={this.onMount}
+        // unMount={this.unMount}
         grabResults={this.grabResults}
         username={this.state.username}
         newFriend={this.state.results ?

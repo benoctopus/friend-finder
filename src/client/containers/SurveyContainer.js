@@ -12,7 +12,6 @@ class SurveyContainer extends Component {
     };
     this.checks = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
     this.checkTracker = this.checkTracker.bind(this);
-    this.onMount = this.props.onMount.bind(this)
   }
 
   renderQuestions(questions) {
@@ -30,7 +29,6 @@ class SurveyContainer extends Component {
       .then(res => res.json())
       .then(questions => {
         this.setState({questions: this.renderQuestions(questions)});
-        this.onMount()
       });
   }
 
