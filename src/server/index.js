@@ -27,7 +27,7 @@ app.post('/api/newfriend', (req, res) => {
 });
 
 
-app.listen(process.env.port || 8080, () => console.log('Listening on port 8080!'));
+app.listen(process.env.PORT || 8000, () => console.log('Listening on port 8080!'));
 
 function determineCompatibility(bachelor) {
   //loop through friends and return lowest compatibility value
